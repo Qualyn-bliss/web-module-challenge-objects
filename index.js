@@ -55,17 +55,17 @@ const burger = {
   name: "Burger",
   price: 18,
   category: "Lunch",
-  discount: function (person) {
-    if (person === "teacher" || person === "student") {
-      return this.price - this.price * 0.25;
-    } else if (this.person === "public") {
-      return this.price - this.price * 0.1;
+  discount: function (string) {
+    if (string === "teacher" || string === "student") {
+      return (this.price - (this.price * 0.25));
+    } else if (this.string === "public") {
+      return (this.price - (this.price * 0.1));
     } else {
       return "no discount";
     }
   },
 };
-
+burger.discount("teacher");
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
   {
@@ -140,7 +140,6 @@ function addReview(array, name, rating, feedback) {
   return array;
 }
 // console.log(
-//   "task 5",
 //   addReview("Daniela", 5, "Beautiful atmosphere and wonderful vegan options!");
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -169,8 +168,8 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  return `${array[array.length-1].name} gave the restaurant a ${[array.length-1].rating} star review, and their feedback was: ${[array.length-1].feedback}`;
 }
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
@@ -189,10 +188,16 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
-function getReviewByRating(/* code here */) {
-  /* code here */
+function getReviewByRating(array) {
+  const newArray = []
+  for(let i=0; i < array.length; i++){
+  if(array.rating >= 4 && array.rating <= 4.9){
+    newArray.push();
+  }
 }
-
+return newArray;
+}
+console.log(getReviewByRating(reviews, 4));
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
   1. Receive the array that holds all the reviews
